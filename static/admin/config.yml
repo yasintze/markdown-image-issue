@@ -1,0 +1,29 @@
+backend:
+  name: git-gateway
+  repo: yasintze/markdown-image
+  branch: main
+
+local_backend: true
+media_folder: static/img
+public_folder: /img
+
+collections:
+  - name: "contents"
+    label: "Content Pages"
+    folder: "src/contents"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - {
+          label: "Description",
+          name: "description",
+          widget: "text",
+          required: true,
+        }
+      - {
+          label: "Image",
+          name: "featuredImage",
+          widget: "image",
+          required: true,
+        }
